@@ -14,7 +14,7 @@ func main() {
 		fmt.Fprintf(w, "healthy\n")
 	})
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
 		numCPUs := runtime.NumCPU()
 		runtime.GOMAXPROCS(numCPUs)
 
