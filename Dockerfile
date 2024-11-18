@@ -3,7 +3,7 @@ FROM golang:1.23.3-alpine
 
 WORKDIR /app
 COPY go.mod hello.go ./
-RUN go build -o server .
+RUN GOOS=linux GOARCH=amd64 go build -o server .
 
 # Expose the port that the application listens on
 EXPOSE 80
